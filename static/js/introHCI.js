@@ -20,6 +20,8 @@ function initializePage() {
 	$("a.thumbnail").click(projectClick);
 
 	$("#submitBtn").click(updateProject);
+
+	$("projectTitle").click(toggleProject);
 }
 
 function projectClick(e) { 
