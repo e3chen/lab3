@@ -20,6 +20,8 @@ function initializePage() {
 	$("a.thumbnail").click(projectClick);
 
 	$("#submitBtn").click(updateProject);
+
+	$("projectTitle").click(toggleProject);
 }
 
 function projectClick(e) { 
@@ -41,10 +43,11 @@ function projectClick(e) {
     var description = $(containingProject).find(".project-description");
     if (description.length == 0) {
        $(containingProject).append("<div class='project-description'><p>Description of the project.</p></div>");
-    } else {
-       //description.html("<p>Stop clicking on me! You just did it at " + (new Date()) + "</p>");
-       $(".project-description").toggle();
-    }
+    } 
+    
+    //description.html("<p>Stop clicking on me! You just did it at " + (new Date()) + "</p>");
+    $(containingProject).find(".project-description").toggle();
+    $(this).find(".img").toggle();
 }
 
 function updateProject(e) {
